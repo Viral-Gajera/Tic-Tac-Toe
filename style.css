@@ -13,6 +13,10 @@
     height: 80px;
 }
 
+.custom-box:hover{
+    background-color: rgb(220, 220, 220);
+}
+
 @media screen and ( min-width: 340px ) {
     .custom-box{
         width: 100px;
