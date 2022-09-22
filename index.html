@@ -15,11 +15,11 @@
         <link rel="stylesheet" href="./style.css" />
     </head>
 
-    <body class="vh-100">
+    <body class="vh-100 overflow-hidden">
         <!-- navbar -->
         <section
             class="container-fluid bg-secondary d-flex justify-content-center p-1 text-white">
-            <h2>Tic Tac Toe</h2>
+            <h2>TIC TAC TOE</h2>
         </section>
 
         <!-- configuration section -->
@@ -28,9 +28,9 @@
                 <!-- drop down -->
                 <div class="col-12 col-md-2 p-2">
                     <select class="form-select form-select-sm">
-                        <option value="">Easy</option>
-                        <option value="">Medium</option>
-                        <option value="">Hard</option>
+                        <option value="">EASY</option>
+                        <option value="">MEDIUM</option>
+                        <option value="">HARD</option>
                     </select>
                 </div>
 
@@ -39,15 +39,22 @@
                     class="col-12 col-md-10 d-flex justify-content-center justify-content-md-end align-items-md-center align-items-center">
                     <input type="checkbox" name="" id="play-with-friend" />
                     <label class="ms-2" for="play-with-friend"
-                        >Play with Friend</label
+                        >PLAY WITH FRIEND</label
                     >
                 </div>
             </div>
         </section>
+        
+        <!-- turn -->
+        <section class="container mt-3 d-flex justify-content-center" > 
+            <span class="border rounded px-5 py-3 text-white bg-secondary" >
+                TURN : <span>O</span>
+            </span>    
+        </section>
 
         <!-- game section -->
         <section
-            class="container mt-4 h-75 d-flex flex-column justify-content-center align-items-center">
+            class="container mt-3 h-75 d-flex flex-column justify-content-center align-items-center">
             <!-- display -->
             <div class="custom-display">
                 <div class="custom-box border border-2 rounded"></div>
@@ -67,8 +74,8 @@
 
             <!-- buttons -->
             <div class="container mt-5 d-flex justify-content-center">
-                <button class="btn btn-secondary my-2 mx-3">Reset</button>
-                <button class="btn btn-secondary my-2 mx-3">Quit</button>
+                <button class="btn btn-secondary my-2 mx-3">RESER</button>
+                <button class="btn btn-secondary my-2 mx-3">QUIT</button>
             </div>
         </section>
 
@@ -79,7 +86,7 @@
                     <h4>Result!</h4>
                 </div>
                 <div>
-                    <button class="btn btn-secondary" >Play Again</button>
+                    <button class="btn btn-secondary" >PLAY AGAIN</button>
                 </div>
             </div>
         </section>
