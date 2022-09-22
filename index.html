@@ -14,12 +14,11 @@
         <!-- my css -->
         <link rel="stylesheet" href="./style.css" />
     </head>
-
     <body class="vh-100 overflow-hidden">
         <!-- navbar -->
         <section
             class="container-fluid bg-secondary d-flex justify-content-center p-1 text-white">
-            <h2>TIC TAC TOE</h2>
+            <h2 class="fw-bold">TIC TAC TOE</h2>
         </section>
 
         <!-- configuration section -->
@@ -28,28 +27,33 @@
                 <!-- drop down -->
                 <div class="col-12 col-md-2 p-2">
                     <select class="form-select form-select-sm">
-                        <option value="">EASY</option>
-                        <option value="">MEDIUM</option>
-                        <option value="">HARD</option>
+                        <option class="fw-bold" value="">EASY</option>
+                        <option class="fw-bold" value="">MEDIUM</option>
+                        <option class="fw-bold" value="">HARD</option>
                     </select>
                 </div>
 
                 <!-- play with friend -->
                 <div
                     class="col-12 col-md-10 d-flex justify-content-center justify-content-md-end align-items-md-center align-items-center">
-                    <input type="checkbox" name="" id="play-with-friend" />
-                    <label class="ms-2" for="play-with-friend"
+                    <input
+                        type="checkbox"
+                        name=""
+                        id="play-with-friend"
+                        checked />
+                    <label class="ms-2 fw-bold" for="play-with-friend"
                         >PLAY WITH FRIEND</label
                     >
                 </div>
             </div>
         </section>
-        
+
         <!-- turn -->
-        <section class="container mt-3 d-flex justify-content-center" > 
-            <span class="border rounded px-5 py-3 text-white bg-secondary" >
-                TURN : <span>O</span>
-            </span>    
+        <section class="container mt-3 d-flex justify-content-center">
+            <span
+                class="border rounded px-5 py-3 text-white bg-secondary fw-bold">
+                TURN : <span class="turn">X</span>
+            </span>
         </section>
 
         <!-- game section -->
@@ -74,25 +78,29 @@
 
             <!-- buttons -->
             <div class="container mt-5 d-flex justify-content-center">
-                <button class="btn btn-secondary my-2 mx-3">RESER</button>
-                <button class="btn btn-secondary my-2 mx-3">QUIT</button>
+                <button class="btn btn-secondary my-2 mx-3 fw-bold">RESET</button>
+                <button class="btn btn-secondary my-2 mx-3 fw-bold">QUIT</button>
             </div>
         </section>
 
         <!-- Modal -->
-        <section class="model" >
-            <div class="d-flex align-items-center justify-content-center flex-column model-alert " >
-                <div class="mb-3" >
+        <section class="model">
+            <div
+                class="d-flex align-items-center justify-content-center flex-column model-alert">
+                <div class="mb-3">
                     <h4>Result!</h4>
                 </div>
                 <div>
-                    <button class="btn btn-secondary" >PLAY AGAIN</button>
+                    <button class="btn btn-secondary">PLAY AGAIN</button>
                 </div>
             </div>
         </section>
 
+        <!-- bootstrap javascrip -->
         <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+
+        <!-- my javascript -->
         <script src="./script.js"></script>
     </body>
 </html>
