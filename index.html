@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tic Tac Toe</title>
+
+        <!-- bootstrap css -->
+        <link
+            rel="stylesheet"
+            href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+
+        <!-- my css -->
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+
+    <body class="vh-100">
+        <!-- navbar -->
+        <section
+            class="container-fluid bg-secondary d-flex justify-content-center p-1 text-white">
+            <h2>Tic Tac Toe</h2>
+        </section>
+
+        <!-- configuration section -->
+        <section class="container mt-2">
+            <div class="row row-cols-1 row-cols-md-2 p-2 p-md-0">
+                <!-- drop down -->
+                <div class="col-12 col-md-2 p-2">
+                    <select class="form-select form-select-sm">
+                        <option value="">Easy</option>
+                        <option value="">Medium</option>
+                        <option value="">Hard</option>
+                    </select>
+                </div>
+
+                <!-- play with friend -->
+                <div
+                    class="col-12 col-md-10 d-flex justify-content-center justify-content-md-end align-items-md-center align-items-center">
+                    <input type="checkbox" name="" id="play-with-friend" />
+                    <label class="ms-2" for="play-with-friend"
+                        >Play with Friend</label
+                    >
+                </div>
+            </div>
+        </section>
+
+        <!-- game section -->
+        <section
+            class="container mt-4 h-75 d-flex flex-column justify-content-center align-items-center">
+            <!-- display -->
+            <div class="custom-display">
+                <div class="custom-box border border-2 rounded overflow-hidden">
+                </div>
+                <div class="custom-box border border-2 rounded">
+                </div>
+                <div class="custom-box border border-2 rounded"></div>
+            </div>
+            <div class="custom-display">
+                <div class="custom-box border border-2 rounded"></div>
+                <div class="custom-box border border-2 rounded"></div>
+                <div class="custom-box border border-2 rounded"></div>
+            </div>
+            <div class="custom-display">
+                <div class="custom-box border border-2 rounded"></div>
+                <div class="custom-box border border-2 rounded"></div>
+                <div class="custom-box border border-2 rounded"></div>
+            </div>
+
+            <!-- buttons -->
+            <div class="container mt-5 d-flex justify-content-center">
+                <button class="btn btn-secondary my-2 mx-3">Reset</button>
+                <button class="btn btn-secondary my-2 mx-3">Quit</button>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <section class="model" >
+            <div class="d-flex align-items-center justify-content-center flex-column model-alert " >
+                <div class="mb-3" >
+                    <h4>Result!</h4>
+                </div>
+                <div>
+                    <button class="btn btn-secondary" >Play Again</button>
+                </div>
+            </div>
+        </section>
+
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="./node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
