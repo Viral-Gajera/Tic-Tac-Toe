@@ -18,7 +18,7 @@ let initialTurn = "X"
 let turn = initialTurn;
 let remaining = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 
-let counter = 9; // only 9 time different player cafn click
+let counter = 9; // only 9 time different player can click
 let matchResult;
 
 // set turnSpan to trun
@@ -55,7 +55,6 @@ function checkWin() {
             remaining[allWinCondition[i][1]] === turn &&
             remaining[allWinCondition[i][2]] === turn
         ) {
-            console.log(`${turn} win !!`);
             matchResult = "win";
             return true;
         }
@@ -72,6 +71,7 @@ function checkWin() {
     return false;
 }
 
+// function to run after won
 function afterWon() {
 
     audioGameOver.play();
@@ -86,7 +86,7 @@ function afterWon() {
     else{
         // {turn} win
         if( ! playWithFriend.checked && turn !== initialTurn ){
-            result.innerHTML = `🏆 Computer win!`;
+            result.innerHTML = `🏆 Computer won!`;
         }
         else if (! playWithFriend.checked && turn === initialTurn ){
             result.innerHTML = `🏆 you won!`;
@@ -106,6 +106,7 @@ function afterWon() {
     })
 }
 
+// function to reset
 function reset(){
     remaining = [0, 1, 2, 3, 4, 5, 6, 7, 8];
     turn = initialTurn;
@@ -116,6 +117,7 @@ function reset(){
     }
 }
 
+// function to play with computer
 function playComputer (){
 
     let number;
@@ -125,7 +127,6 @@ function playComputer (){
     while( ! remaining.includes(number) );
 
     let box = document.getElementById(`${number}`);
-    console.log(box);
 
     if (turn === "X" && number === remaining[number]) {
         box.innerHTML = `<img src="./Ref-image/rectangle.svg" />`;
@@ -146,44 +147,9 @@ function playComputer (){
         }
     }
     
-    console.log(number);
 }
 
-function playerClicked(box, number) {
-
-    if (turn === "X" && number === remaining[number]) 
-    {        
-        audioTurn.play();
-        box.innerHTML = `<img src="./Ref-image/rectangle.svg" />`;
-        remaining[number] = "X";
-
-        if (checkWin()) {
-            afterWon();
-        } else {
-            changeTurn();
-            if( ! playWithFriend.checked ){
-                playComputer();
-            }
-        }
-    }
-    if (turn === "O" && number === remaining[number]) 
-    {
-        audioTurn.play();
-        box.innerHTML = `<img src="./Ref-image/circle.svg" />`;
-        remaining[number] = "O";
-
-        if (checkWin()) {
-            afterWon();
-        } else {
-            changeTurn();
-            if( ! playWithFriend.checked  ){
-                playComputer();
-            }
-        }
-    }
-}
-
-// event listener
+// event listener for play-with-friend checkbox
 playWithFriendContainer.addEventListener('click', function(event){
 
     reset();
@@ -202,15 +168,48 @@ playWithFriendContainer.addEventListener('click', function(event){
     event.stopPropagation();
 })
 
-// event listener
+// event listener for boxes
 for (let box of boxes) {
     box.addEventListener("click", function () {
-        let number = Number(box.getAttribute("data-number"));
-        playerClicked(box, number);
+        let number = Number(box.getAttribute("id"));
+
+        if (turn === "X" && number === remaining[number]) 
+        {        
+            audioTurn.play();
+            box.innerHTML = `<img src="./Ref-image/rectangle.svg" />`;
+            remaining[number] = "X";
+    
+            if (checkWin()) {
+                afterWon();
+            } else {
+                changeTurn();
+                if( ! playWithFriend.checked ){
+                    playComputer();
+                }
+            }
+        }
+        if (turn === "O" && number === remaining[number]) 
+        {
+            audioTurn.play();
+            box.innerHTML = `<img src="./Ref-image/circle.svg" />`;
+            remaining[number] = "O";
+    
+            if (checkWin()) {
+                afterWon();
+            } else {
+                changeTurn();
+                if( ! playWithFriend.checked  ){
+                    playComputer();
+                }
+            }
+        }
     });
 }
 
-// event listener
+// event listener for reset button
 resetBtn.addEventListener('click', function(){
     reset();
 })
+
+// event listener for quit button
+quit.addEventListener('click', function(){})
