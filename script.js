@@ -212,4 +212,6 @@ resetBtn.addEventListener('click', function(){
 })
 
 // event listener for quit button
-quit.addEventListener('click', function(){})
+quit.addEventListener('click', function(){
+    window.close();
+})
